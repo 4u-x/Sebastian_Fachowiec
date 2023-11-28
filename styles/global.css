@@ -1,0 +1,16 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+      .body , html{
+        background-color: #FFE17B;
+        margin: 0;
+        padding: 0;
+        height: 100vk;
+        }
+
+

@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/Global.module.css';
+import '../styles/global.scss';
+
 
 
 export default function MyApp({ Component, pageProps }) {
