@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from "../styles/Login.module.css";
+import styles from "../styles/Main.module.scss";
 
 
 
@@ -14,7 +14,7 @@ export default function Login() {
     };
 
     return (
-        <div className={styles.loginCenter}>
+        <div className="loginCenter">
             <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
             <form onSubmit={handleSubmit}>
                 {!isLogin && (

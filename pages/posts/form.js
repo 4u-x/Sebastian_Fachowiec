@@ -1,5 +1,5 @@
 import React from "react";
-import Forma from "../../components/Forma"
+import TodoList from "../../components/TodoList"
 import App from "../../components/app"
 
 
@@ -8,7 +8,7 @@ import App from "../../components/app"
 
 export default function Form(){
     return <div>
-     <Forma/>
+     <TodoList/>
     <App/>
     
     </div>
