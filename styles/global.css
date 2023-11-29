@@ -1,16 +1,55 @@
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+.body , html{
+  background:(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  margin: 0;
+  padding: 0;
+  height: 100vk;
   }
-  
-      .body , html{
-        background-color: #FFE17B;
-        margin: 0;
-        padding: 0;
-        height: 100vk;
-        }
 
+.buttons .btn {
+  display: grid;
+  margin-top: 10px;
+  margin-right:5px;
+  background-color:#C51605;
+  
+  
+  
+}
+
+header {
+  background:(ellipse at bottom, #1b2735 0%, #090a0f 100%); 
+  position: fixed;  
+  top: 0px; 
+  left: 0;          
+  width: 100%;      
+  height: 10vh;    
+  padding: 0;      
+  
+}
+
+
+
+main{
+    justify-content: center;
+    text-align: center;
+    color: #C51605;
+    margin-top: 150px;
+    background:(ellipse at bottom, #1b2735 0%, #090a0f 100%); 
+    
+font-family: 'Dancing Script', cursive;
+font-family: 'Edu SA Beginner', cursive;
+font-family: 'Libre Baskerville', serif;
+font-family: 'Tilt Prism', cursive;
+}
+
+
+.footer{
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  margin-left: 600px;
+}
+/* styles/globals.css */
+.header-nav li {
+  margin-right: 40px; /* Dodaje odstęp między przyciskami */
+}
 
