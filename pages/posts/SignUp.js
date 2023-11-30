@@ -6,7 +6,7 @@ import App from "../../components/app"
 
 export default function SignUp(){
     return <div>
-   
+   <Login/>
     <App/>
     </div>
      

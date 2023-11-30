@@ -1,44 +1,35 @@
 import React, { useState } from 'react';
-import styles from "../styles/Main.module.scss";
+import styles from "../styles/Login.module.css"
 
-
-
-
-export default function Login() {
-    const [isLogin, setIsLogin] = useState(true);
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        // Add logic to handle form submission
-        // This might involve sending a request to your backend API
-    };
+export default  function Login() {
+    // Tutaj można dodać logikę stanu, jeśli jest potrzebna
 
     return (
-        <div className="loginCenter">
-            <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
-            <form onSubmit={handleSubmit}>
-                {!isLogin && (
-                    <input 
-                        type="text" 
-                        placeholder="Your Name" 
-                        required 
-                    />
-                )}
-                <input 
-                    type="email" 
-                    placeholder="Email" 
-                    required 
-                />
-                <input 
-                    type="password" 
-                    placeholder="Password" 
-                    required 
-                />
-                <button className={styles.login} type="submit">{isLogin ? 'Login' : 'Sign Up'}</button>
-            </form>
-            <button onClick={() => setIsLogin(!isLogin)}>
-                Switch to {isLogin ? 'Sign Up' : 'Login'}
-            </button>
+        <div className='logos'>
+        <div className={styles.wrapper}>
+            <div className={styles.logo}>
+                <img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-0.png" alt="Twitter Logo" />
             </div>
+            <div className="text-center mt-4 name">
+                Twitter
+            </div>
+            <form className="p-3 mt-3">
+                <div className="form-field d-flex align-items-center">
+                    <span className="far fa-user"></span>
+                    <input type="text" name="userName" id="userName" placeholder="Username" />
+                </div>
+                <div className="form-field d-flex align-items-center">
+                    <span className="fas fa-key"></span>
+                    <input type="password" name="password" id="pwd" placeholder="Password" />
+                </div>
+                <button className="btn mt-3">Login</button>
+            </form>
+            <div className="text-center fs-6">
+                <a href="#">Forget password?</a> or <a href="#">Sign up</a>
+            </div>
+        </div>
+        </div>
     );
 }
+
+
