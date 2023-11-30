@@ -1,7 +1,7 @@
 TODO list
 
 Author: Sebastian Truchlewski 78521  Tomasz Kacprzak
-Created at: https://github.com/truchlewski/Sebastian_Tomo-ARIT2.git
+Created at: https://github.com/4u-x/Sebastian_Tomo-ARIT2.git
 
 
 
