@@ -7,7 +7,10 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start",
+    "expres-dev": "node serv.js"
   },
   "repository": {
     "type": "git",
@@ -20,8 +23,14 @@
   },
   "homepage": "https://github.com/4u-x/Sebastian_Tomo-ARIT2#readme",
   "dependencies": {
+    "bootstrap": "^5.3.2",
+    "express": "^4.18.2",
+    "jquery": "^3.7.1",
     "next": "^14.0.3",
+    "popper.js": "^1.16.1",
+    "pug": "^3.0.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sass": "^1.69.5"
   }
 }
