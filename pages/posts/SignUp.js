@@ -1,27 +1,13 @@
-import React from 'react';
-import { signIn, useSession } from 'next-auth/react';
-import Login from "../../components/Login";
+import React from "react";
+import Login from "../../components/Login"
+import App from "../../components/app"
 
 
-function SignUp() {
-  const { data: session } = useSession();
 
-  const handleSignIn = () => {
-    signIn('google', { callbackUrl: 'http://localhost:3000/posts/form' });
-
-  };
-
-  // Jeśli użytkownik jest zalogowany, wyświetl informacje o sesji lub coś innego
-  if (session) {
-    return <div>Welcome {session.user.email}</div>;
-  }
-
-  // Jeśli użytkownik nie jest zalogowany, wyświetl formularz SignUp
-  return (
-    <div>
-      <button onClick={handleSignIn}>Zaloguj się przez Google</button>
-      {/* Tu możesz dodać formularz rejestracji, jeśli jest potrzebny */}
-      <Login/>
+export default function SignUp(){
+    return <div>
+   <Login/>
+    <App/>
     </div>
   );
 }
