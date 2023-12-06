@@ -1,5 +1,5 @@
 .body , html{
-  background:(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background-color: #FFE17B;
   margin: 0;
   padding: 0;
   height: 100vk;
@@ -10,7 +10,7 @@
   margin-top: 10px;
   margin-right:5px;
   background-color:#C51605;
-  
+   
   
   
 }
@@ -48,8 +48,8 @@ font-family: 'Tilt Prism', cursive;
   bottom: 0;
   margin-left: 600px;
 }
-/* styles/globals.css */
+styles/globals.css
 .header-nav li {
-  margin-right: 40px; /* Dodaje odstęp między przyciskami */
+  margin-right: 40px; 
 }
 
