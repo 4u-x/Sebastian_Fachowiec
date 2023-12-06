@@ -10,7 +10,7 @@
   margin-top: 10px;
   margin-right:5px;
   background-color:#C51605;
-  
+   
   
   
 }
@@ -48,8 +48,8 @@ font-family: 'Tilt Prism', cursive;
   bottom: 0;
   margin-left: 600px;
 }
-/* styles/globals.css */
+styles/globals.css
 .header-nav li {
-  margin-right: 40px; /* Dodaje odstęp między przyciskami */
+  margin-right: 40px; 
 }
 
