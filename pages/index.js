@@ -2,10 +2,11 @@ import React from "react";
 import Head from 'next/head';
 import App from "../components/app";
 import Script from 'next/script';
+import Main from "../components/Main"
 
 
 export default function Home(props) {
-  // Use the props here, which are returned from getServerSideProps
+  
   return (
     <>
       <Head>
@@ -19,19 +20,19 @@ export default function Home(props) {
       />
 
       <App/>
-      {/* Example usage of props */}
-      <div>Data from server: {JSON.stringify(props.data)}</div>
+      <Main/>
+      
     </>
   );
 }
 
 export async function getServerSideProps(context) {
-  // Fetch data here
+  
   const response = await fetch("http://localhost:5000/api/home");
-  const data = await response.json(); // Parse the JSON data
+  const data = await response.json(); 
 
-  // Return the data as props
+  
   return {
-    props: { data }, // This data can be accessed as props in your page component
+    props: { data }, 
   };
 }

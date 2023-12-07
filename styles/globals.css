@@ -9,7 +9,7 @@
   display: grid;
   margin-top: 10px;
   margin-right:5px;
-  background-color:#C51605;
+  
    
   
   
@@ -42,11 +42,15 @@ font-family: 'Tilt Prism', cursive;
 }
 
 
-.footer{
+.footer {
   display: flex;
-  position: absolute;
+  justify-content: center; 
+  align-items: center;  
+  position: fixed;
+  left: 0;
+  right: 0;
   bottom: 0;
-  margin-left: 600px;
+  margin: 0 auto;
 }
 styles/globals.css
 .header-nav li {

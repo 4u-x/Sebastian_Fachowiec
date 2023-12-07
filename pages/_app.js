@@ -1,7 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/global.css';
+import '../styles/globals.css';
 import { SessionProvider } from 'next-auth/react';
+
 
 
 

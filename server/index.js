@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json()); 
 
 app.get("/api/home", (req, res) => {
-    res.json({ message: "love winter", people: ["josef", "ania", "claudia"] });
+    res.json({ });
 });
 
 // Dodajemy endpoint do logowania
@@ -29,6 +29,3 @@ app.post("/api/auth", (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);
 });
-
-
-

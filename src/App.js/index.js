@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function Index() { // Renamed to start with an uppercase letter
+function Index() { 
   const [message, setMessage] = useState("Loading");
   const [people, setPeople] = useState([]); 
 
