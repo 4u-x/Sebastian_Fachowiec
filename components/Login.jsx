@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { useRouter } from 'next/router'; // Importujesz hook useRouter
+import { useRouter } from 'next/router'; 
 import styles from "../styles/login.module.css";
-import Link from 'next/link'; // Importujesz komponent Link
+import Link from 'next/link'; 
 
 export default function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const router = useRouter(); // Tworzysz instancję routera
+    const router = useRouter(); 
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -23,19 +23,20 @@ export default function Login() {
             const data = await response.json();
 
             if (response.ok) {
-                // Przekierowanie do strony formularza po zalogowaniu
+                
                 router.push('/posts/form');
             } else {
-                // Wyświetlanie komunikatu o błędzie
+              
                 alert(data.message);
             }
         } catch (error) {
-            // Obsługa błędów związanych z siecią
+            
             console.error('Błąd logowania:', error);
         }
     }
 
     return (
+        <div className={styles.back}>
         <div className={styles.wrapper}>
             <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.logo}>
@@ -66,11 +67,12 @@ export default function Login() {
                 <button className={styles.btn} type="submit">🔒 Login</button>
             </form>
             <div className={styles.registerLink}>
-                {/* Link do strony rejestracji */}
+                
                 <Link href="/posts/newsign">
                     <>Zarejestruj się</>
                 </Link>
             </div>
+        </div>
         </div>
     );
 }

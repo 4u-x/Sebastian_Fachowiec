@@ -27,11 +27,7 @@ export default function Header() {
                             <><button className="btn btn-info rounded-pill px-3" type="button">🔒Login</button></>
                         </Link>
                     </li>
-                    <li>
-                        <Link href="/posts/form">
-                            <><button className="btn btn-info rounded-pill px-3" type="button">👀Forma</button></>
-                        </Link>
-                    </li>
+                  
                     <li>
                         <Link href="/posts/newsign">
                             <><button className="btn btn-info rounded-pill px-3" type="button">🔒Sign up</button></>

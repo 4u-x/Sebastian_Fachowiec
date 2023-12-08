@@ -1,5 +1,5 @@
 .body , html{
-  background-color: #FFE17B;
+  background-color:#5F6F52;
   margin: 0;
   padding: 0;
   height: 100vk;
@@ -33,7 +33,7 @@ main{
     text-align: center;
     color: #C51605;
     margin-top: 150px;
-    background:(ellipse at bottom, #1b2735 0%, #090a0f 100%); 
+    
     
 font-family: 'Dancing Script', cursive;
 font-family: 'Edu SA Beginner', cursive;
@@ -51,6 +51,8 @@ font-family: 'Tilt Prism', cursive;
   right: 0;
   bottom: 0;
   margin: 0 auto;
+  color: #fff;
+  
 }
 styles/globals.css
 .header-nav li {
