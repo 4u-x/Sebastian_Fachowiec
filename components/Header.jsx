@@ -28,9 +28,15 @@ export default function Header() {
                         </Link>
                     </li>
                   
+                   
                     <li>
                         <Link href="/posts/newsign">
                             <><button className="btn btn-info rounded-pill px-3" type="button">🔒Sign up</button></>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/posts/search">
+                            <><button className="btn btn-info rounded-pill px-3" type="button">🔎Search</button></>
                         </Link>
                     </li>
                 </ul>

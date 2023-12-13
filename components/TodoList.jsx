@@ -6,7 +6,7 @@ export default function TodoList() {
   const [newTask, setNewTask] = useState('');
 
   const addTask = () => {
-    if (!newTask) return; // nie dodawaj pustych zadań
+    if (!newTask) return; 
     const newTasks = [...tasks, { id: Date.now(), text: newTask, completed: false }];
     setTasks(newTasks);
     setNewTask('');
