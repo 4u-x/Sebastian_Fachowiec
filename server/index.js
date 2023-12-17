@@ -1,45 +1,101 @@
-import express from 'express';
-import cors from 'cors';
+import express from "express";
 import mysql from 'mysql';
 import dotenv from "dotenv";
-import path from "path";
-import { fileURLToPath } from 'url';
-import pagesRouter from './routes/pages.js';
-
+import cors from 'cors';
+import bcrypt from 'bcrypt';
 
 dotenv.config({path: './.env'});
 
+const router = express.Router();
 const app = express();
-const PORT = 5000;
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
-// Konfiguracja połączenia z bazą danych
+app.use(express.json());
+app.use(cors());
+app.use(router);
+
+
+
+
+
+// Utworzenie połączenia z bazą danych
 const database = mysql.createConnection({
     host: process.env.DATABASE_HOST,
     user: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASSWORD, 
     database: process.env.DATABASE
 });
-const publicDirectory =  path.join(__dirname,)
-console.log(__dirname);
-// Nawiązywanie połączenia z bazą danych
+
 database.connect((error) => {
     if (error) {
-        console.log(error);
-    } else {
-        console.log("MYSQL Connected...");
+        console.error("Błąd połączenia z MySQL:", error);
+        return;
+    }
+    console.log("Połączono z MySQL...");
+});
+
+// Endpoint dla strony głównej
+router.get("/api/home", (req, res) => {
+    // Logika dla tego endpointu, np. pobieranie danych z bazy
+    res.json({ message: "Dane strony głównej" });
+});
+
+// Endpoint do logowania
+router.post("/api/auth", (req, res) => {
+    const { email, password } = req.body;
+
+    // Zapytanie do bazy danych tylko po email, aby pobrać zahashowane hasło
+    const query = "SELECT * FROM users WHERE email = ?";
+    database.query(query, [email], async (error, results) => {
+        if (error) {
+            res.status(500).json({ message: "Błąd bazy danych", error });
+            return;
+        }
+        
+        if (results.length > 0) {
+            // Porównanie zahashowanego hasła z hasłem przekazanym przez użytkownika
+            const match = await bcrypt.compare(password, results[0].password);
+            if (match) {
+                // Hasła się zgadzają, logowanie udane
+                res.json({ message: "Logowanie udane!" });
+            } else {
+                // Hasła się nie zgadzają, logowanie nieudane
+                res.status(401).json({ message: "Nieprawidłowe dane logowania!" });
+            }
+        } else {
+            // Nie znaleziono użytkownika z tym emailem
+            res.status(401).json({ message: "Nieprawidłowe dane logowania!" });
+        }
+    });
+});
+
+
+router.post("/api/register", async (req, res) => {
+    const { name, email, password } = req.body;
+
+    try {
+        // Hashowanie hasła
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        // Zapytanie do bazy danych
+        const insertQuery = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
+        database.query(insertQuery, [name, email, hashedPassword], (error, results) => {
+            if (error) {
+                // Obsługa błędu związana z bazą danych
+                return res.status(500).json({ message: "Błąd podczas rejestracji użytkownika", error });
+            }
+
+            // Użytkownik został zarejestrowany
+            res.status(201).json({ message: "Użytkownik zarejestrowany pomyślnie" });
+        });
+    } catch (error) {
+        // Obsługa błędów związanych z hashowaniem hasła
+        res.status(500).json({ message: "Błąd podczas hashowania hasła", error });
     }
 });
 
-app.use(cors());
-app.use(express.json());
+export default router;
 
-// w tym momwncie sciagamy z pages componenty
-app.use('/', pagesRouter);// w tym miejscu wymagamy z pages strony
-
-
-
-app.listen(PORT, () => {
-    console.log(`Server started on port ${PORT}`);
+app.listen(5000, () => {
+    console.log('Server is running on port 5000');
 });
+

@@ -5,12 +5,13 @@ import Script from 'next/script';
 import Main from "../components/Main"
 
 
+
 export default function Home(props) {
   
   return (
     <>
       <Head>
-        <title>TODO</title>
+        <title>Fachowiec</title>
       </Head>
 
       <Script

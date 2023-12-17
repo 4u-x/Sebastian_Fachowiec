@@ -4,20 +4,20 @@ import styles from "../styles/Signup.module.css";
 
 
 export default function Login() {
+    const [name, setName] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const router = useRouter(); 
 
     async function handleSubmit(event) {
         event.preventDefault();
-
         try {
-            const response = await fetch('http://localhost:5000/api/auth', {
+            const response = await fetch('http://localhost:5000/api/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ email: username, password: password }),
+                body: JSON.stringify({ name: name ,email: username, password: password }),
             });
 
             const data = await response.json();
@@ -35,6 +35,10 @@ export default function Login() {
         }
     }
 
+      
+        
+
+  
     return (
         <div className={styles.back}>
         <div className={styles.wrapper}>
@@ -43,12 +47,23 @@ export default function Login() {
                     <img src="/images/nft.png" alt="NFT Logo" />
                 </div>
                 <div className={styles.formField}>
+                        <span className="far fa-user"></span>
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            placeholder="Imię"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                        />
+                    </div>
+                <div className={styles.formField}>
                     <span className="far fa-user"></span>
                     <input
                         type="text"
                         name="userName"
                         id="userName"
-                        placeholder="Username/email"
+                        placeholder="email"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                     />
