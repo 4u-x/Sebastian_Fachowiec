@@ -16,7 +16,6 @@ app.use(router);
 
 
 
-
 // Utworzenie połączenia z bazą danych
 const database = mysql.createConnection({
     host: process.env.DATABASE_HOST,
@@ -34,7 +33,7 @@ database.connect((error) => {
 });
 
 // Endpoint dla strony głównej
-router.get("/api/home", (req, res) => {
+router.get("/", (req, res) => {
     // Logika dla tego endpointu, np. pobieranie danych z bazy
     res.json({ message: "Dane strony głównej" });
 });
@@ -68,7 +67,6 @@ router.post("/api/auth", (req, res) => {
     });
 });
 
-
 router.post("/api/register", async (req, res) => {
     const { name, email, password } = req.body;
 
@@ -98,4 +96,3 @@ export default router;
 app.listen(5000, () => {
     console.log('Server is running on port 5000');
 });
-

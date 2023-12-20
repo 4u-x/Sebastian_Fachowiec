@@ -1,0 +1,6 @@
+.logout-container {
+    position: fixed; /* Fixed position */
+    top: 10px; /* 10px from the top */
+    right: 10px; /* 10px from the right */
+    z-index: 1000; /* Ensures it stays on top of other elements */
+}

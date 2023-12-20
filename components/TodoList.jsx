@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import styles from "../styles/Forma.module.css"
 
+
 export default function TodoList() {
+  
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
 
@@ -28,6 +30,7 @@ export default function TodoList() {
   };
 
   return (
+    
     <div className={styles.tlo}>
       <section className="vh-100">
         <div className="container py-5 h-100">
@@ -97,6 +100,7 @@ export default function TodoList() {
         
       </section>
     </div>
+    
   );
 }
 

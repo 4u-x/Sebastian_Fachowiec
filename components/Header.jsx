@@ -8,7 +8,7 @@ import React from 'react';
 
 
 
-export default function Header() {
+export default function Header({showLogout}) {
    
     return (
         <div className='buttons'>
@@ -27,18 +27,17 @@ export default function Header() {
                             <><button className="btn btn-info rounded-pill px-3" type="button">🔒Login</button></>
                         </Link>
                     </li>
-                  
-                   
-                    <li>
-                        <Link href="/posts/newsign">
-                            <><button className="btn btn-info rounded-pill px-3" type="button">🔒Sign up</button></>
-                        </Link>
-                    </li>
-                    <li>
+                <li>
                         <Link href="/posts/search">
                             <><button className="btn btn-info rounded-pill px-3" type="button">🔎Search</button></>
                         </Link>
                     </li>
+                    <li>
+                <Link href="/">
+                  <button className="btn btn-info rounded-pill px-3" type="button">⏏️Wyloguj</button>
+                </Link>
+              </li>
+                   
                 </ul>
             </nav>
            
