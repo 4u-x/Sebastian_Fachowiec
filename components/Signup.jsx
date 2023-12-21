@@ -7,6 +7,7 @@ export default function Login() {
     const [name, setName] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [passwordConfirm, setpasswordConfirm] = useState('');
     const router = useRouter(); 
 
     async function handleSubmit(event) {
@@ -77,6 +78,17 @@ export default function Login() {
                         placeholder="Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
+                <div className={styles.formField}>
+                    <span className="fas fa-key"></span>
+                    <input
+                        type="password"
+                        name="passwordConfirm"
+                        id="pwd"
+                        placeholder="Password Confirm"
+                        value={passwordConfirm}
+                        onChange={(e) => setpasswordConfirm(e.target.value)}
                     />
                 </div>
                 <button className={styles.btn} type="submit">🔒Zarejestruj się</button>

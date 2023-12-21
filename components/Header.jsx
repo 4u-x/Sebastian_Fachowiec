@@ -8,6 +8,7 @@ import React from 'react';
 
 
 
+
 export default function Header({showLogout}) {
    
     return (
@@ -37,6 +38,7 @@ export default function Header({showLogout}) {
                   <button className="btn btn-info rounded-pill px-3" type="button">⏏️Wyloguj</button>
                 </Link>
               </li>
+
                    
                 </ul>
             </nav>
