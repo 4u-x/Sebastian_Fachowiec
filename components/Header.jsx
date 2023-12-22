@@ -33,11 +33,7 @@ export default function Header({showLogout}) {
                             <><button className="btn btn-info rounded-pill px-3" type="button">🔎Search</button></>
                         </Link>
                     </li>
-                    <li>
-                <Link href="/">
-                  <button className="btn btn-info rounded-pill px-3" type="button">⏏️Wyloguj</button>
-                </Link>
-              </li>
+                
 
                    
                 </ul>

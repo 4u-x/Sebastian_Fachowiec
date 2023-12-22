@@ -1,35 +1,7 @@
 import React from 'react';
-import { Button, Form, Input, InputNumber, FloatButton, Dropdown} from 'antd';
-import styles from "../styles/UserProfile.module.css";
-
-const items = [
-  {
-    key: '1',
-    label: (
-      <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
-        1st menu item
-      </a>
-    ),
-  },
-  {
-    key: '2',
-    label: (
-      <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
-        2nd menu item
-      </a>
-    ),
-  },
-  {
-    key: '3',
-    label: (
-      <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
-        3rd menu item
-      </a>
-    ),
-  },
-];
-
-
+import { Button, Form, Input, InputNumber } from 'antd';
+import styles from '../styles/UserProfile.module.css';
+import Link from 'next/link';
 
 const layout = {
   labelCol: {
@@ -43,132 +15,141 @@ const layout = {
 const onFinish = (values) => {
   console.log(values);
 };
+
 const UserProfile = () => (
-  <div className={styles.contener}>
-   <FloatButton onClick={() => console.log('onClick')} />;
-   <div className={styles.btnUser}>
-   <>
-    <Dropdown
-      menu={{
-        items,
-      }}
-      placement="bottomLeft"
-      arrow
-    >
-      <Button>bottomLeft</Button>
-    </Dropdown>
-    <Dropdown
-      menu={{
-        items,
-      }}
-      placement="bottom"
-      arrow
-    >
-      <Button>bottom</Button>
-    </Dropdown>
-    <Dropdown
-      menu={{
-        items,
-      }}
-      placement="bottomRight"
-      arrow
-    >
-      <Button>bottomRight</Button>
-    </Dropdown>
-    <br />
-    <Dropdown
-      menu={{
-        items,
-      }}
-      placement="topLeft"
-      arrow
-    >
-      <Button>topLeft</Button>
-    </Dropdown>
-    <Dropdown
-      menu={{
-        items,
-      }}
-      placement="top"
-      arrow
-    >
-      <Button>top</Button>
-    </Dropdown>
-    <Dropdown
-      menu={{
-        items,
-      }}
-      placement="topRight"
-      arrow
-    >
-      <Button>topRight</Button>
-    </Dropdown>
-  </>
-
-
-   </div>
-
-  <Form
-    {...layout}
-    name="nest-messages"
-    onFinish={onFinish}
-    style={{
-      maxWidth: 600,
-    }}
+  <div className={styles.container}>
    
-  >
-    <Form.Item
-      name={['user', 'name']}
-      label="Name"
-      rules={[
-        {
-          required: true,
-        },
-      ]}
-    >
-      <Input />
-    </Form.Item>
-    <Form.Item
-      name={['user', 'email']}
-      label="Email"
-      rules={[
-        {
-          type: 'email',
-        },
-      ]}
-    >
-      <Input />
-    </Form.Item>
-    <Form.Item
-      name={['user', 'age']}
-      label="Age"
-      rules={[
-        {
-          type: 'number',
-          min: 0,
-          max: 99,
-        },
-      ]}
-    >
-      <InputNumber />
-    </Form.Item>
-    <Form.Item name={['user', 'website']} label="Website">
-      <Input />
-    </Form.Item>
-    <Form.Item name={['user', 'introduction']} label="Introduction">
-      <Input.TextArea />
-    </Form.Item>
-    <Form.Item
-      wrapperCol={{
-        ...layout.wrapperCol,
-        offset: 8,
+    
+    <div className='buttons'>
+    <header>
+            <nav>
+                <ul className="d-flex list-unstyled">
+                    <li>
+                        <Link href="/">
+                        <button className="btn btn-info rounded-pill px-3" type="button">🛕Home</button>
+
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/posts/SignUp">
+                            <><button className="btn btn-info rounded-pill px-3" type="button">🔒Login</button></>
+                        </Link>
+                    </li>
+                <li>
+                        <Link href="/posts/search">
+                            <><button className="btn btn-info rounded-pill px-3" type="button">🔎Search</button></>
+                        </Link>
+                    </li>
+                
+
+                   
+                </ul>
+            </nav>
+           
+        </header>
+      
+    </div>
+    
+    <div className={styles.contener}>
+    <Form
+      {...layout}
+      name="nest-messages"
+      onFinish={onFinish}
+      style={{
+        maxWidth: 600,
       }}
     >
-      <Button type="primary" htmlType="submit">
-        Submit
-      </Button>
-    </Form.Item>
-  </Form>
+      <Form.Item
+        name={['user', 'imie']}
+        label="Imie"
+        rules={[
+          {
+            required: true,
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item
+        name={['user', 'nazwisko']}
+        label="Nazwisko"
+        rules={[
+          {
+            required: true,
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+      <Form.Item
+        name={['user', 'usluga']}
+        label="Usługa"
+        rules={[
+          {
+            required: true,
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item
+        name={['user', 'miejscowosc']}
+        label="Miejscowość"
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item
+        name={['user', 'telefon']}
+        label="Numer Telefonu"
+        rules={[
+          {
+            required: true,
+            pattern: new RegExp(/^[0-9]+$/),
+            message: 'Proszę wprowadzić poprawny numer telefonu',
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item
+        name={['user', 'email']}
+        label="Email"
+        rules={[
+          {
+            type: 'email',
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+
+      
+
+      <Form.Item name={['user', 'website']} label="Website">
+        <Input />
+      </Form.Item>
+
+      <Form.Item name={['user', 'introduction']} label="Introduction">
+        <Input.TextArea />
+      </Form.Item>
+     
+
+      <Form.Item
+        wrapperCol={{
+          ...layout.wrapperCol,
+          offset: 8,
+        }}
+      >
+        <Button type="primary" htmlType="submit">
+          Submit
+        </Button>
+      </Form.Item>
+    </Form>
+  </div>
   </div>
 );
 

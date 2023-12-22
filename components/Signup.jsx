@@ -25,7 +25,7 @@ export default function Login() {
 
             if (response.ok) {
                 
-                router.push('/posts/form');
+                router.push('/posts/userProfile');
             } else {
               
                 alert(data.message);
