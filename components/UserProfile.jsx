@@ -1,7 +1,8 @@
-import React from 'react';
-import { Button, Form, Input, InputNumber } from 'antd';
+import React , { useState }  from 'react';
+import { Button, Form, Input} from 'antd';
 import styles from '../styles/UserProfile.module.css';
 import Link from 'next/link';
+
 
 const layout = {
   labelCol: {
@@ -31,13 +32,13 @@ const UserProfile = () => (
                         </Link>
                     </li>
                     <li>
-                        <Link href="/posts/SignUp">
-                            <><button className="btn btn-info rounded-pill px-3" type="button">🔒Login</button></>
+                        <Link href="/">
+                            <><button className="btn btn-info rounded-pill px-3" type="button">🔒Logout</button></>
                         </Link>
                     </li>
                 <li>
                         <Link href="/posts/search">
-                            <><button className="btn btn-info rounded-pill px-3" type="button">🔎Search</button></>
+                            <><button className="btn btn-info rounded-pill px-3" type="button">✔Profil</button></>
                         </Link>
                     </li>
                 
