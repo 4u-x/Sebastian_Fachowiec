@@ -1,10 +1,10 @@
 # "TO DO List" app with user login
 
 _Why:_ 
-Stworzenie aplikacji, która umożliwi wpisanie wszystkich zadań, rzeczy i umówionych spotkań w jednym miejscu.
+Stworzenie aplikacji, która umożliwi wyszukanie fachowcow.
 
 _What:_
-Możlwiość wyświetlania  i przypominania zadań w formie listy (?). Dostęp do "TO DO List" nastąpi poprzez zalogowanie się użytkownika do swojej "listy".
+Mozliwosc wyszukiwanian
 
 _How:_
 Visual studio code (HTML .JS.CSS)
